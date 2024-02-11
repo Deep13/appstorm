@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import GPTScreen from './components/GPTScreen';
+import ExploreScreen from './components/ExploreScreen';
+import MyApps from './components/MyApps';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Dashboard />} ></Route>
+      <Route path='/Explore' element={<ExploreScreen />} ></Route>
+      <Route path='/myapps' element={<MyApps />} ></Route>
+      <Route path='/gpt/:id' element={<GPTScreen />} ></Route>
+    </Routes>
   );
 }
 
